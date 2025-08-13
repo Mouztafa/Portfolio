@@ -1,435 +1,510 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="en">
+  <head>
     <title>Moustafa Magdy Loutfy - Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Custom Styles & Color Palette */
-        :root {
-            --bg-light: #f8fafc; /* slate-50 */
-            --bg-dark: #000000; /* True Black */
-            --surface-light: #ffffff;
-            --surface-dark: #111827; /* gray-900 */
-            --text-light: #0f172a; /* slate-900 */
-            --text-dark: #e2e8f0; /* slate-200 */
-            --text-muted-light: #64748b; /* slate-500 */
-            --text-muted-dark: #94a3b8; /* slate-400 */
-            --accent: #2dd4bf; /* Teal-400 */
-            --accent-hover: #14b8a6; /* Teal-500 */
-            --border-light: #e2e8f0; /* slate-200 */
-            --border-dark: #334155; /* slate-700 */
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-light);
-        }
-        .dark body {
-            background-color: var(--bg-dark);
-            color: var(--text-dark);
-        }
-        .bg-surface {
-            background-color: var(--surface-light);
-        }
-        .dark .bg-surface {
-            background-color: var(--surface-dark);
-        }
-        .text-muted {
-            color: var(--text-muted-light);
-        }
-        .dark .text-muted {
-            color: var(--text-muted-dark);
-        }
-        .text-accent {
-            color: var(--accent);
-        }
-        .bg-accent {
-            background-color: var(--accent);
-        }
-        .hover\:bg-accent-hover:hover {
-            background-color: var(--accent-hover);
-        }
-        .border-custom {
-            border-color: var(--border-light);
-        }
-        .dark .border-custom {
-            border-color: var(--border-dark);
-        }
-        .backdrop-blur-custom {
-            background-color: rgba(248, 250, 252, 0.7);
-            -webkit-backdrop-filter: blur(8px);
-            backdrop-filter: blur(8px);
-        }
-        .dark .backdrop-blur-custom {
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-    </style>
-</head>
-<body class="transition-colors duration-300">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Header & Navigation -->
-    <header class="backdrop-blur-custom sticky top-0 z-50 border-b border-custom">
-        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex-shrink-0">
-                    <a href="#" class="text-2xl font-bold text-accent">MML</a>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#about" class="text-muted hover:text-accent transition">About</a>
-                        <a href="#experience" class="text-muted hover:text-accent transition">Experience</a>
-                        <a href="#projects" class="text-muted hover:text-accent transition">Projects</a>
-                        <a href="#skills" class="text-muted hover:text-accent transition">Skills</a>
-                        <a href="#contact" class="text-muted hover:text-accent transition">Contact</a>
-                    </div>
-                </div>
-                <div class="flex items-center">
-                    <button id="theme-toggle" class="p-2 rounded-full text-muted hover:bg-slate-200 dark:hover:bg-slate-700 focus:outline-none">
-                        <svg id="theme-icon-light" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                        </svg>
-                        <svg id="theme-icon-dark" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                        </svg>
-                    </button>
-                    <div class="-mr-2 flex md:hidden ml-2">
-                        <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-muted hover:text-accent focus:outline-none">
-                            <span class="sr-only">Open main menu</span>
-                            <svg id="hamburger-icon" class="h-6 w-6 block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                            </svg>
-                            <svg id="close-icon" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
+    <meta name="description" content="Portfolio of Moustafa Magdy Loutfy, a Communication & Electronics Engineer and AIoT specialist.">
+    <meta name="keywords" content="html, css, javascript, jquery, portfolio, IoT, AI, Engineer">
+    <meta name="author" content="Moustafa Magdy Loutfy">
+
+    <!-- Using CDN links for all assets to ensure they load correctly -->
+    <link rel="stylesheet" href="https://preview.colorlib.com/theme/unfold/css/vendor/icomoon/style.css">
+    <link rel="stylesheet" href="https://preview.colorlib.com/theme/unfold/css/vendor/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://preview.colorlib.com/theme/unfold/css/vendor/animate.min.css">
+    <link rel="stylesheet" href="https://preview.colorlib.com/theme/unfold/css/vendor/aos.css">
+    <link rel="stylesheet" href="https://preview.colorlib.com/theme/unfold/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="https://preview.colorlib.com/theme/unfold/css/vendor/jquery.fancybox.min.css">
+    
+
+    <!-- Main Theme Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+  <body data-spy="scroll" data-target=".site-nav-target" data-offset="200">
+
+    <nav class="unslate_co--site-mobile-menu">
+      <div class="close-wrap d-flex">
+        <a href="#" class="d-flex ml-auto js-menu-toggle">
+          <span class="close-label">Close</span>
+          <div class="close-times">
+            <span class="bar1"></span>
+            <span class="bar2"></span>
+          </div>
+        </a>
+      </div>
+      <div class="site-mobile-inner"></div>
+    </nav>
+
+
+    <div class="unslate_co--site-wrap">
+
+      <div class="unslate_co--site-inner">
+      
+      <nav class="unslate_co--site-nav site-nav-target">
+
+        <div class="container">
+        
+          <div class="row align-items-center justify-content-between text-left">
+            <div class="col-md-5 text-right">
+              <ul class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block">
+                <li><a href="#home-section" class="nav-link"><h5>Home</h5></a></li>
+                <li><a href="#portfolio-section" class="nav-link"><h5>Portfolio</h5></a></li>
+                <li><a href="#about-section" class="nav-link"><h5>About</h5></a></li>
+                <li><a href="#services-section" class="nav-link"><h5>Services</h5></a></li>
+              </ul>
             </div>
-            <!-- Mobile menu, show/hide based on menu state. -->
-            <div class="md:hidden hidden" id="mobile-menu">
-                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    <a href="#about" class="text-muted hover:text-accent block px-3 py-2 rounded-md text-base font-medium">About</a>
-                    <a href="#experience" class="text-muted hover:text-accent block px-3 py-2 rounded-md text-base font-medium">Experience</a>
-                    <a href="#projects" class="text-muted hover:text-accent block px-3 py-2 rounded-md text-base font-medium">Projects</a>
-                    <a href="#skills" class="text-muted hover:text-accent block px-3 py-2 rounded-md text-base font-medium">Skills</a>
-                    <a href="#contact" class="text-muted hover:text-accent block px-3 py-2 rounded-md text-base font-medium">Contact</a>
-                </div>
+            <div class="site-logo pos-absolute">
+              <a href="port.html" class="unslate_co--site-logo">MML<span>.</span></a>
             </div>
-        </nav>
-    </header>
+            <div class="col-md-5 text-right text-lg-left">
+              <ul class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block">
+                <li><a href="#skills-section" class="nav-link"><h5>Skills</h5></a></li>
+                <li><a href="#experience-section" class="nav-link"><h5>Experience</h5></a></li>
+                <li><a href="#contact-section" class="nav-link"><h5>Contact</h5></a></li>
+              </ul>
 
-    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+              <ul class="site-nav-ul-none-onepage text-right d-inline-block d-lg-none">
+                <li><a href="#" class="js-menu-toggle"><h5>Menu</h5></a></li>
+              </ul>
 
-        <!-- Hero Section -->
-        <section id="home" class="text-center py-20">
-            <img src="Images/Untitled design.jpg" 
-                 alt="Moustafa Magdy Loutfy" 
-                 class="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto mb-6 shadow-xl border-4 border-white dark:border-slate-800 object-cover">
-            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-4">Moustafa Magdy Loutfy</h1>
-            <h2 class="text-xl md:text-2xl text-accent font-medium mb-8">Communication & Electronics Engineer | IoT & AI Enthusiast</h2>
-            <div class="flex justify-center items-center flex-wrap gap-x-4 gap-y-2 text-sm text-muted">
-                <span class="flex items-center">
-                    <svg class="w-5 h-5 mr-1.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg>
-                    Egypt
-                </span>
-                <span class="flex items-center">
-                    <svg class="w-5 h-5 mr-1.5" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
-                    moustafaloutfy@gmail.com
-                </span>
             </div>
-            <div class="mt-8 flex justify-center space-x-6">
-                <a href="https://linkedin.com/in/mouztafa" target="_blank" class="text-slate-500 hover:text-accent transition">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
-                </a>
-                 <a href="mailto:MoustafaMagdy@ieee.org" class="text-slate-500 hover:text-accent transition">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
-                </a>
-            </div>
-        </section>
-
-        <!-- About Me -->
-        <section id="about" class="py-16">
-            <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-3xl font-bold mb-4">About Me</h2>
-                <p class="text-lg text-muted">
-                    I am a recent graduate with a B.Sc. in Communication and Electronics Engineering, passionate about building the future through technology. My journey has taken me from maintaining critical biomedical equipment to designing robust cybersecurity networks and developing full-stack AIoT solutions. I thrive on challenges, from developing a comprehensive AIoT graduation project to competing in prestigious hackathons like GDG Delta, Creativa, and NASA Space Apps. With a strong foundation in both hardware and software, I'm eager to contribute my skills in IoT, networking, and AI to an innovative team.
-                </p>
-            </div>
-        </section>
-
-        <!-- Experience -->
-        <section id="experience" class="py-16">
-            <h2 class="text-3xl font-bold text-center mb-12">Experience & Education</h2>
-            <div class="grid grid-cols-1 gap-8">
-                <!-- Education Card -->
-                <div class="bg-surface p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-bold mb-2">B.Sc. in Communication and Electronics Engineering</h3>
-                    <p class="text-accent font-medium mb-2">Misr Engineering and Technology Institute (MET) — Class of 2025</p>
-                    <p class="text-muted">Focused on a comprehensive curriculum covering telecommunications, electronics, networking, and embedded systems, culminating in a large-scale AIoT graduation project.</p>
-                </div>
-                <!-- Experience Cards -->
-                <div class="bg-surface p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-bold mb-2">Biomedical Technician</h3>
-                    <p class="text-accent font-medium mb-2">Ministry of Health — Ongoing</p>
-                    <ul class="list-disc list-inside text-muted space-y-1">
-                        <li>Perform technical maintenance and setup of biomedical equipment.</li>
-                        <li>Coordinate with medical staff for emergency repairs.</li>
-                    </ul>
-                </div>
-                <div class="bg-surface p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-bold mb-2">Intern</h3>
-                    <p class="text-accent font-medium mb-2">WE Mansoura</p>
-                    <ul class="list-disc list-inside text-muted space-y-1">
-                        <li>Trained in SDH, DWDM, FTTH, and GPON communication systems.</li>
-                        <li>Gained hands-on experience in fiber optics and network troubleshooting.</li>
-                    </ul>
-                </div>
-                <div class="bg-surface p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-bold mb-2">Leadership & Volunteering</h3>
-                    <p class="text-accent font-medium mb-2">IEEE MET Student Branch & Competitive Programming</p>
-                    <ul class="list-disc list-inside text-muted space-y-2">
-                        <li><strong>Head of Assistant and Project Management (Current):</strong> Leading project initiatives and team coordination.</li>
-                        <li><strong>Former Head of Multimedia & Business Development:</strong> Managed branding, media creation, and strategic partnerships.</li>
-                        <li><strong>Event Organization:</strong>
-                            <ul class="list-disc list-inside pl-5 mt-1 space-y-1">
-                                <li>Organized "Awareness Bytes," a key career-track event for engineering students.</li>
-                                <li>Led the "Empowerment Program," a series of technical courses and an ideation camp in collaboration with Creativa Hub Mansoura.</li>
-                            </ul>
-                        </li>
-                        <li><strong>Strategic Initiatives:</strong> Currently planning the establishment of a new technical IEEE branch focused on embedded systems, web, and cybersecurity.</li>
-                        <li><strong>Competitive Programming:</strong> Participated twice in the ACPC, once as a coach, demonstrating strong problem-solving and leadership skills.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects -->
-        <section id="projects" class="py-16">
-            <h2 class="text-3xl font-bold text-center mb-12">Projects & Achievements</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project Cards will go here, same as before -->
-                <div class="bg-surface rounded-lg shadow-lg overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">AgriMind: Smart Farm (Graduation Project)</h3>
-                        <p class="text-muted mb-4">A real-time IoT system with a multi-zone architecture, ESP32 controllers, a Flutter app, Firebase, and CNN models for fruit classification.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-teal-900 dark:text-teal-300">IoT</span>
-                            <span class="bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-emerald-900 dark:text-emerald-300">AI</span>
-                            <span class="bg-sky-100 text-sky-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-sky-900 dark:text-sky-300">Flutter</span>
-                            <span class="bg-amber-100 text-amber-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-amber-900 dark:text-amber-300">Firebase</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-surface rounded-lg shadow-lg overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Hackathon Innovations: REVERIA & Pill Dispenser</h3>
-                        <p class="text-muted mb-4">Developed 'REVERIA', AI-powered glasses for Alzheimer's patients (Creativa Hackathon), and a smart pill dispenser (GDG Delta Hackathon).</p>
-                        <div class="flex flex-wrap gap-2">
-                             <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">Hackathon</span>
-                             <span class="bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-emerald-900 dark:text-emerald-300">AI</span>
-                             <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-teal-900 dark:text-teal-300">IoT</span>
-                             <span class="bg-sky-100 text-sky-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-sky-900 dark:text-sky-300">Mobile App</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-surface rounded-lg shadow-lg overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">ECOPath App (NASA Space Apps)</h3>
-                        <p class="text-muted mb-4">Developed for the NASA Space Apps Cairo hackathon, the world's largest local event, to teach SDGs to high schoolers.</p>
-                        <div class="flex flex-wrap gap-2">
-                             <span class="bg-sky-100 text-sky-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-sky-900 dark:text-sky-300">Mobile App</span>
-                             <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">Hackathon</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-surface rounded-lg shadow-lg overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">LPF IC Design with Cadence</h3>
-                        <p class="text-muted mb-4">Designed a Low-Pass Filter integrated circuit using 128µm technology with the Cadence software suite, demonstrating skills in analog electronics.</p>
-                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-slate-100 text-slate-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-slate-700 dark:text-slate-300">IC Design</span>
-                            <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">Cadence</span>
-                            <span class="bg-cyan-100 text-cyan-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-cyan-900 dark:text-cyan-300">Electronics</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-surface rounded-lg shadow-lg overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">SAP-1 Computer Architecture</h3>
-                        <p class="text-muted mb-4">Designed and simulated a functional SAP-1 (Simple-As-Possible) computer architecture using Logisim to showcase digital logic design skills.</p>
-                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-amber-100 text-amber-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-amber-900 dark:text-amber-300">Logisim</span>
-                            <span class="bg-slate-100 text-slate-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-slate-700 dark:text-slate-300">Digital Design</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-surface rounded-lg shadow-lg overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Python Data Scraping</h3>
-                        <p class="text-muted mb-4">Developed and deployed Python scripts to efficiently scrape, process, and structure data from various web sources for analysis.</p>
-                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-lime-100 text-lime-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-lime-900 dark:text-lime-300">Python</span>
-                            <span class="bg-fuchsia-100 text-fuchsia-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-fuchsia-900 dark:text-fuchsia-300">Data Scraping</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-surface rounded-lg shadow-lg overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Anti-Theft System</h3>
-                        <p class="text-muted mb-4">A smart alert system designed with electronic components and sensors to detect and deter unauthorized access in various environments.</p>
-                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-rose-100 text-rose-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-rose-900 dark:text-rose-300">Security</span>
-                            <span class="bg-cyan-100 text-cyan-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-cyan-900 dark:text-cyan-300">Electronics</span>
-                            <span class="bg-slate-100 text-slate-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-slate-700 dark:text-slate-300">Sensors</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills & Certifications -->
-        <section id="skills" class="py-16">
-            <div class="text-center">
-                <h2 class="text-3xl font-bold mb-12">Technical Skills & Certifications</h2>
-            </div>
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Skills -->
-                <div>
-                    <h3 class="text-2xl font-semibold mb-6 text-center md:text-left">Skills</h3>
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="font-bold text-lg mb-2">Programming</h4>
-                            <p class="text-muted">Python, C++, C#, MATLAB</p>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-lg mb-2">Networking & Cybersecurity</h4>
-                            <p class="text-muted">VLANs, Routing & Switching, Firewalls, IDS/IPS, DMZ, Honeypots</p>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-lg mb-2">Tools & Platforms</h4>
-                            <p class="text-muted">Cisco Packet Tracer, Proteus, VS Code, Logisim, Cadence, Firebase, Flutter, Arduino, ESP32</p>
-                        </div>
-                         <div>
-                            <h4 class="font-bold text-lg mb-2">Creative & Soft Skills</h4>
-                            <p class="text-muted">Graphic Design, Photography, Videography, Project Ideation, Leadership, Guitar & Piano</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Certifications -->
-                <div>
-                    <h3 class="text-2xl font-semibold mb-6 text-center md:text-left">Certifications</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center bg-surface p-4 rounded-lg shadow-md">
-                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-sky-100 dark:bg-sky-900 flex items-center justify-center">
-                                <span class="text-sky-600 dark:text-sky-300 font-bold">C</span>
-                            </div>
-                            <p class="ml-4 font-medium">CCNA – Cisco</p>
-                        </div>
-                         <div class="flex items-center bg-surface p-4 rounded-lg shadow-md">
-                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-sky-100 dark:bg-sky-900 flex items-center justify-center">
-                                <span class="text-sky-600 dark:text-sky-300 font-bold">C</span>
-                            </div>
-                            <p class="ml-4 font-medium">CyberOps Associate – Cisco</p>
-                        </div>
-                        <div class="flex items-center bg-surface p-4 rounded-lg shadow-md">
-                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
-                                <span class="text-blue-600 dark:text-blue-300 font-bold">W</span>
-                            </div>
-                            <p class="ml-4 font-medium">Communication Systems Diploma – WE</p>
-                        </div>
-                        <div class="flex items-center bg-surface p-4 rounded-lg shadow-md">
-                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-emerald-100 dark:bg-emerald-900 flex items-center justify-center">
-                                <span class="text-emerald-600 dark:text-emerald-300 font-bold">N</span>
-                            </div>
-                            <p class="ml-4 font-medium">Graphic Design & Web Design – NTI</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="py-20 text-center">
-             <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
-             <p class="max-w-2xl mx-auto text-lg text-muted mb-8">
-                 I'm currently seeking opportunities where I can apply my skills in networking, IoT, and software development. If you have a project or a role in mind, or just want to connect, feel free to reach out!
-             </p>
-             <a href="mailto:moustafaloutfy@gmail.com" class="inline-block bg-accent text-white font-bold py-3 px-8 rounded-lg hover:bg-accent-hover transition duration-300 shadow-lg">
-                 Say Hello
-             </a>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-surface border-t border-custom">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-muted">
-            <p>&copy; 2025 Moustafa Magdy Loutfy. All Rights Reserved.</p>
+          </div>
         </div>
-    </footer>
 
-    <script>
-        // --- Theme switcher logic ---
-        const themeToggle = document.getElementById('theme-toggle');
-        const lightIcon = document.getElementById('theme-icon-light');
-        const darkIcon = document.getElementById('theme-icon-dark');
-        const htmlEl = document.documentElement;
+      </nav>
+      <!-- END nav -->
 
-        const applyTheme = (theme) => {
-            if (theme === 'dark') {
-                htmlEl.classList.add('dark');
-                lightIcon.classList.remove('hidden');
-                darkIcon.classList.add('hidden');
-            } else {
-                htmlEl.classList.remove('dark');
-                lightIcon.classList.add('hidden');
-                darkIcon.classList.remove('hidden');
-            }
-        };
+      <div class="cover-v1 jarallax" style="background-image: url('Images/20250813_0551_Monochrome\ Portrait\ Adjustment_remix_01k2gnafnnfm59djghsbczvhv1.png');   " id="home-section">
+        <div class="container">
+          <div class="row align-items-center">
+              
+            <div class="col-md-8 mx-auto text-center">
+              <h1 class="heading gsap-reveal-hero">Moustafa Magdy Loutfy</h1>
+              <h2 class="subheading gsap-reveal-hero">I’m a Communication & Electronics Engineer | IoT & AI Enthusiast Based In Egypt.</h2>
+            </div>
 
-        const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        
-        if (savedTheme) {
-            applyTheme(savedTheme);
-        } else {
-            applyTheme(prefersDark ? 'dark' : 'light');
-        }
+          </div>
+        </div>
 
-        themeToggle.addEventListener('click', () => {
-            const isDark = htmlEl.classList.toggle('dark');
-            const newTheme = isDark ? 'dark' : 'light';
-            localStorage.setItem('theme', newTheme);
-            applyTheme(newTheme);
-        });
 
-        // --- Mobile menu logic ---
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const hamburgerIcon = document.getElementById('hamburger-icon');
-        const closeIcon = document.getElementById('close-icon');
+        <a href="#portfolio-section" class="mouse-wrap smoothscroll">
+          <span class="mouse">
+            <span class="scroll"></span>
+          </span>
+          <span class="mouse-label">Scroll</span>
+        </a>
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            hamburgerIcon.classList.toggle('hidden');
-            closeIcon.classList.toggle('hidden');
-        });
-        
-        // Close mobile menu when a link is clicked
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                hamburgerIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
-            });
-        });
+      </div>
+      <!-- END .cover-v1 -->
 
-    </script>
-</body>
+
+      <div class="unslate_co--section" id="portfolio-section">
+        <div class="container">
+          
+          <div class="relative"><div class="loader-portfolio-wrap"><div class="loader-portfolio"></div></div> </div>
+          <div id="portfolio-single-holder"></div>
+
+          <div class="portfolio-wrapper">
+
+            <div class="d-flex align-items-center mb-4 gsap-reveal gsap-reveal-filter">
+              <h2 class="mr-auto heading-h2"><span class="gsap-reveal">Portfolio</span></h2>
+            </div>
+            
+            <div id="posts" class="row gutter-isotope-item">
+              <div class="item web branding col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
+                <a href="#" class="portfolio-item isotope-item gsap-reveal-img">
+                    <div class="overlay">
+                      <span class="wrap-icon icon-link2"></span>
+                      <div class="portfolio-item-content">
+                        <h3>AgriMind: Smart Farm</h3>
+                        <p>IoT, AI, Flutter, Firebase</p>
+                      </div>
+                    </div>
+                    <img src="https://placehold.co/600x600/1a1a1a/ffffff?text=AgriMind" class="lazyload  img-fluid" alt="AgriMind Project" />
+                  </a>
+              </div>
+              <div class="item branding packaging illustration col-sm-6 col-md-6 col-lg-4 isotope-mb-2 ">
+                <a href="#" class="portfolio-item isotope-item gsap-reveal-img">
+                    <div class="overlay">
+                      <span class="wrap-icon icon-link2"></span>
+                      <div class="portfolio-item-content">
+                        <h3>Hackathon Innovations</h3>
+                        <p>AI, IoT, Mobile App</p>
+                      </div>
+                    </div>
+                    <img src="https://placehold.co/600x750/1a1a1a/ffffff?text=Hackathons" class="lazyload  img-fluid" alt="Hackathon Projects" />
+                  </a>
+              </div>
+
+              <div class="item branding packaging col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
+                 <a href="#" class="portfolio-item isotope-item gsap-reveal-img">
+                    <div class="overlay">
+                      <span class="wrap-icon icon-link2"></span>
+                      <div class="portfolio-item-content">
+                        <h3>ECOPath App (NASA Space Apps)</h3>
+                        <p>Mobile App, Hackathon</p>
+                      </div>
+                    </div>
+                    <img src="https://placehold.co/600x600/1a1a1a/ffffff?text=ECOPath" class="lazyload  img-fluid" alt="ECOPath App" />
+                  </a>
+              </div>
+
+              <div class="item web packaging col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
+                <a href="#" class="portfolio-item isotope-item gsap-reveal-img">
+                    <div class="overlay">
+                       <span class="wrap-icon icon-link2"></span>
+                      <div class="portfolio-item-content">
+                        <h3>LPF IC Design with Cadence</h3>
+                        <p>IC Design, Electronics</p>
+                      </div>
+                    </div>
+                    <img src="https://placehold.co/600x600/1a1a1a/ffffff?text=IC+Design" class="lazyload  img-fluid" alt="IC Design Project" />
+                  </a>
+              </div>
+              
+              <div class="item web branding col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
+                <a href="#" class="portfolio-item isotope-item gsap-reveal-img">
+                    <div class="overlay">
+                      <span class="wrap-icon icon-link2"></span>
+                      <div class="portfolio-item-content">
+                        <h3>SAP-1 Computer Architecture</h3>
+                        <p>Digital Design, Logisim</p>
+                      </div>
+                    </div>
+                    <img src="https://placehold.co/600x750/1a1a1a/ffffff?text=SAP-1" class="lazyload  img-fluid" alt="SAP-1 Project" />
+                  </a>
+              </div>
+
+              <div class="item illustration packaging col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
+                <a href="#" class="portfolio-item isotope-item gsap-reveal-img">
+                    <div class="overlay">
+                      <span class="wrap-icon icon-link2"></span>
+                      <div class="portfolio-item-content">
+                        <h3>Python Data Scraping</h3>
+                        <p>Python, Data Scraping</p>
+                      </div>
+                    </div>
+                    <img src="https://placehold.co/600x600/1a1a1a/ffffff?text=Data+Scraping" class="lazyload  img-fluid" alt="Data Scraping Project" />
+                  </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="unslate_co--section">
+        <div class="container">
+          <div class="owl-carousel logo-slider">
+            <div class="logo-v1 gsap-reveal">
+              <img src="https://preview.colorlib.com/theme/unfold/images/logo-ieee-white.png" alt="IEEE Logo" class="img-fluid" style="filter: invert(1);">
+            </div>
+            <div class="logo-v1 gsap-reveal">
+              <img src="https://preview.colorlib.com/theme/unfold/images/logo-we-white.png" alt="WE Logo" class="img-fluid" style="filter: invert(1);">
+            </div>
+            <div class="logo-v1 gsap-reveal">
+              <img src="https://preview.colorlib.com/theme/unfold/images/logo-cisco-white.png" alt="Cisco Logo" class="img-fluid" style="filter: invert(1);">
+            </div>
+            <div class="logo-v1 gsap-reveal">
+              <img src="https://preview.colorlib.com/theme/unfold/images/logo-nti-white.png" alt="NTI Logo" class="img-fluid" style="filter: invert(1);">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="unslate_co--section" id="about-section">
+        <div class="container">
+          <div class="section-heading-wrap text-center mb-5">
+            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">About Me</span></h2>
+            <span class="gsap-reveal">
+            <img src="https://preview.colorlib.com/theme/unfold/images/divider.png" alt="divider" width="76">
+            </span>
+          </div>
+          
+          <div class="row mt-5 justify-content-between">
+            <div class="col-lg-7 mb-5 mb-lg-0">
+              <figure class="dotted-bg gsap-reveal-img ">
+                <img src="https://placehold.co/800x800/2dd4bf/ffffff?text=MML" alt="Moustafa Magdy Loutfy" class="img-fluid">
+              </figure>
+            </div>
+            <div class="col-lg-4 pr-lg-5">
+              <h3 class="mb-4 heading-h3"><span class="gsap-reveal">Let's Build the Future</span></h3>
+              <p class="lead gsap-reveal">I am a recent graduate with a B.Sc. in Communication and Electronics Engineering, passionate about building the future through technology. My journey has taken me from maintaining critical biomedical equipment to designing robust cybersecurity networks and developing full-stack AIoT solutions. </p>
+              <p class="mb-4 gsap-reveal">I thrive on challenges, from developing a comprehensive AIoT graduation project to competing in prestigious hackathons like GDG Delta, Creativa, and NASA Space Apps. With a strong foundation in both hardware and software, I'm eager to contribute my skills in IoT, networking, and AI to an innovative team.</p>
+              <p class="gsap-reveal"><a href="#" class="btn btn-outline-pill btn-custom-light">Download CV</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="unslate_co--section" id="services-section">
+        <div class="container">
+
+          <div class="section-heading-wrap text-center mb-5">
+            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">My Services</span></h2>
+            <span class="gsap-reveal"><img src="https://preview.colorlib.com/theme/unfold/images/divider.png" alt="divider" width="76"></span>
+          </div>
+
+          <div class="row gutter-v3">
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="feature-v1" data-aos="fade-up" data-aos-delay="0">
+                <div class="wrap-icon mb-3">
+                  <img src="https://preview.colorlib.com/theme/unfold/images/svg/001-options.svg" alt="IoT Icon" width="45">
+                </div>
+                <h3>IoT & Embedded<br> Systems</h3>
+                <p>Developing full-stack IoT solutions from hardware sensors (ESP32, Arduino) to cloud integration (Firebase). </p>
+              </div> 
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="feature-v1" data-aos="fade-up" data-aos-delay="100">
+                <div class="wrap-icon mb-3">
+                  <img src="https://preview.colorlib.com/theme/unfold/images/svg/002-chat.svg" alt="Network Icon" width="45">
+                </div>
+                <h3>Network Design &<br> Cybersecurity</h3>
+                <p>Designing and securing networks with VLANs, Firewalls, IDS/IPS, and best practices from CCNA & CyberOps training.</p>
+              </div> 
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="feature-v1" data-aos="fade-up" data-aos-delay="200">
+                <div class="wrap-icon mb-3">
+                  <img src="https://preview.colorlib.com/theme/unfold/images/svg/003-contact-book.svg" alt="AI Icon" class="img-fluid" width="45">
+                </div>
+                <h3>AI &<br> Machine Learning</h3>
+                <p>Applying AI and CNN models for practical applications like fruit classification and assistive technology for patients.</p>
+              </div> 
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="feature-v1" data-aos="fade-up" data-aos-delay="0">
+                <div class="wrap-icon mb-3">
+                  <img src="https://preview.colorlib.com/theme/unfold/images/svg/004-percentage.svg" alt="Mobile App Icon" width="45">
+                </div>
+                <h3>Mobile App<br> Development</h3>
+                <p>Creating cross-platform mobile applications using Flutter for user-facing control and interaction.</p>
+              </div> 
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="feature-v1" data-aos="fade-up" data-aos-delay="100">
+                <div class="wrap-icon mb-3">
+                  <img src="https://preview.colorlib.com/theme/unfold/images/svg/006-goal.svg" alt="Leadership Icon" width="45">
+                </div>
+                <h3>Project Ideation<br> & Leadership</h3>
+                <p>Leading project initiatives, organizing technical events, and managing teams within the IEEE student branch.</p>
+              </div> 
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="feature-v1" data-aos="fade-up" data-aos-delay="200">
+                <div class="wrap-icon mb-3">
+                  <img src="https://preview.colorlib.com/theme/unfold/images/svg/005-line-chart.svg" alt="Creative Icon" width="45">
+                </div>
+                <h3>Creative &<br> Multimedia</h3>
+                <p>Skilled in graphic design, photography, and videography to support branding and project presentation.</p>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="unslate_co--section section-counter" id="skills-section">
+        <div class="container">
+          <div class="section-heading-wrap text-center mb-5">
+            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">My Skills</span></h2>
+            <span class="gsap-reveal"><img src="https://preview.colorlib.com/theme/unfold/images/divider.png" alt="divider" width="76"></span>
+          </div>
+
+          <div class="row pt-5">
+            <div class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+              <div class="counter-v1 text-center">
+                <span class="number-wrap">
+                  <span class="number number-counter" data-number="95">0</span>
+                  <span class="append-text">%</span>
+                </span>
+                <span class="counter-label">Python</span>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+              <div class="counter-v1 text-center">
+                <span class="number-wrap">
+                  <span class="number number-counter" data-number="90">0</span>
+                  <span class="append-text">%</span>
+                </span>
+                <span class="counter-label">IoT / Embedded</span>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+              <div class="counter-v1 text-center">
+                <span class="number-wrap">
+                  <span class="number number-counter" data-number="85">0</span>
+                  <span class="append-text">%</span>
+                </span>
+                <span class="counter-label">Networking</span>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+              <div class="counter-v1 text-center">
+                <span class="number-wrap">
+                  <span class="number number-counter" data-number="80">0</span>
+                  <span class="append-text">%</span>
+                </span>
+                <span class="counter-label">C++/C#</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END .counter -->
+      
+      <div class="unslate_co--section" id="experience-section">
+        <div class="container">
+          <div class="section-heading-wrap text-center mb-5">
+            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">Experience & Education</span></h2>
+            <span class="gsap-reveal"><img src="https://preview.colorlib.com/theme/unfold/images/divider.png" alt="divider" width="76"></span>
+          </div>
+          
+          <div class="row gutter-v4 align-items-stretch">
+            <div class="col-sm-6 col-md-6 col-lg-8 blog-post-entry" data-aos="fade-up" data-aos-delay="0">
+              <a href="#" class="grid-item blog-item w-100 h-100">
+                <div class="overlay">
+                  <div class="portfolio-item-content">
+                    <h3>B.Sc. in Communication and Electronics Engineering</h3>
+                    <p class="post-meta">Misr Engineering and Technology Institute (MET) <span class="small">&bullet;</span> Class of 2025</p>
+                  </div>
+                </div>
+                <img src="https://placehold.co/800x400/2dd4bf/ffffff?text=Education" class="lazyload" alt="Education" />
+              </a>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="100">
+              <a href="#" class="grid-item blog-item w-100 h-100">
+                <div class="overlay">
+                  <div class="portfolio-item-content">
+                    <h3>Biomedical Technician</h3>
+                    <p class="post-meta">Ministry of Health <span class="small">&bullet;</span> Ongoing</p>
+                  </div>
+                </div>
+                <img src="https://placehold.co/600x600/1a1a1a/ffffff?text=Experience" class="lazyload" alt="Experience" />
+              </a>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="0">
+              <a href="#" class="grid-item blog-item w-100 h-100">
+                <div class="overlay">
+                  <div class="portfolio-item-content">
+                    <h3>Internship at WE</h3>
+                    <p class="post-meta">WE Mansoura <span class="small">&bullet;</span> Communications</p>
+                  </div>
+                </div>
+                <img src="https://placehold.co/600x600/1a1a1a/ffffff?text=Internship" class="lazyload" alt="Internship" />
+              </a>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="100">
+              <a href="#" class="grid-item blog-item w-100 h-100">
+                <div class="overlay">
+                  <div class="portfolio-item-content">
+                    <h3>Leadership at IEEE</h3>
+                    <p class="post-meta">IEEE MET Student Branch <span class="small">&bullet;</span> Leadership</p>
+                  </div>
+                </div>
+                <img src="https://placehold.co/600x600/1a1a1a/ffffff?text=IEEE" class="lazyload" alt="IEEE" />
+              </a>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="200">
+              <a href="#" class="grid-item blog-item w-100 h-100">
+                <div class="overlay">
+                  <div class="portfolio-item-content">
+                    <h3>Certifications</h3>
+                    <p class="post-meta">Cisco, WE, NTI <span class="small">&bullet;</span> Professional Dev</p>
+                  </div>
+                </div>
+                <img src="https://placehold.co/600x600/1a1a1a/ffffff?text=Certs" class="lazyload" alt="Certifications" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="unslate_co--section" id="contact-section">
+        <div class="container">
+          <div class="section-heading-wrap text-center mb-5">
+            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">Get In Touch</span></h2>
+            <span class="gsap-reveal"><img src="https://preview.colorlib.com/theme/unfold/images/divider.png" alt="divider" width="76"></span>
+          </div>
+
+          <div class="row justify-content-between">
+            <div class="col-md-6">
+              <form method="post" class="form-outline-style-v1" id="contactForm">
+                <div class="form-group row mb-0">
+                  <div class="col-lg-6 form-group gsap-reveal">
+                    <label for="name">Name</label>
+                    <input name="name" type="text" class="form-control" id="name">
+                  </div>
+                  <div class="col-lg-6 form-group gsap-reveal">
+                    <label for="email">Email</label>
+                    <input name="email" type="email" class="form-control" id="email">
+                  </div>
+                  <div class="col-lg-12 form-group gsap-reveal">
+                    <label for="message">Write your message...</label>
+                    <textarea name="message" id="message" cols="30" rows="7" class="form-control"></textarea>
+                  </div>
+                </div>
+                <div class="form-group row gsap-reveal">
+                    <div class="col-md-12 d-flex align-items-center">
+                      <input type="submit" class="btn btn-outline-pill btn-custom-light mr-3" value="Send Message">
+                      <span class="submitting"></span>
+                    </div>
+                  </div>
+              </form>
+              <div id="form-message-warning" class="mt-4"></div> 
+              <div id="form-message-success">
+                Your message was sent, thank you!
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="contact-info-v1">
+                <div class="gsap-reveal d-block">
+                  <span class="d-block contact-info-label">Email</span>
+                  <a href="mailto:moustafaloutfy@gmail.com" class="contact-info-val">moustafaloutfy@gmail.com</a>
+                </div>
+                <div class="gsap-reveal d-block">
+                  <span class="d-block contact-info-label">IEEE Email</span>
+                  <a href="mailto:MoustafaMagdy@ieee.org" class="contact-info-val">MoustafaMagdy@ieee.org</a>
+                </div>
+                <div class="gsap-reveal d-block">
+                  <span class="d-block contact-info-label">Address</span>
+                  <address class="contact-info-val">Mansoura, <br> Egypt</address>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div> <!-- END .unslate_co-site-inner -->
+
+      <footer class="unslate_co--footer unslate_co--section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-7">
+              <div class="footer-site-logo"><a href="#">MML<span>.</span></a></div>
+              <ul class="footer-site-social">
+                <li><a href="https://linkedin.com/in/moustafamagdy1" target="_blank">LinkedIn</a></li>
+              </ul>
+              <p class="site-copyright">
+                Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | Template by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <!-- Loader -->
+    <div id="unslate_co--overlayer"></div>
+    <div class="site-loader-wrap">
+      <div class="site-loader"></div>
+    </div>
+
+    <script src="https://preview.colorlib.com/theme/unfold/js/scripts-dist.js"></script>
+    <script src="https://preview.colorlib.com/theme/unfold/js/main.js"></script>
+
+  </body>
 </html>
-
